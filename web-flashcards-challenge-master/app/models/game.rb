@@ -3,7 +3,9 @@ class Game < ActiveRecord::Base
   belongs_to :user
   belongs_to :deck
   has_many :responses
+
   has_many :cards, through: :deck
+
 
   def correct_answers
   	self.responses.count { |response| response.correct? }

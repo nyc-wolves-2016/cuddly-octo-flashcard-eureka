@@ -1,4 +1,5 @@
 get '/' do
+  redirect '/decks'
 end
 
 get '/session-viewer' do
