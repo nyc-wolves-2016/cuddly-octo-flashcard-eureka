@@ -21,11 +21,11 @@
     <div class="nav_container">
       <nav class="nav_bar">
         <ul class="horizontal">
-          <% if !logged_in? %><li class="pipe-separate t-black left"><a href="/register">register</a></li><%end%>
-          <% if logged_in? %><li class="pipe-separate t-black left"><%= current_user.username %></li><%end%>
-          <% if !logged_in? %><li class="pipe-separate t-black left"><a href="/login">login</a></li><%end%>
-          <% if logged_in? %><li class="pipe-separate t-black left"><a href="/logout">logout</a></li><%end%>
-          <li class="pipe-separate t-black left"><a href="/">home</a></li>
+          <% if !logged_in? %><li class="pipe-separate t-white left"><a href="/register">register</a></li><%end%>
+          <% if logged_in? %><li class="pipe-separate t-white left"><%= current_user.username %></li><%end%>
+          <% if !logged_in? %><li class="pipe-separate t-white left"><a href="/login">login</a></li><%end%>
+          <% if logged_in? %><li class="pipe-separate t-white left"><a href="/logout">logout</a></li><%end%>
+          <li class="pipe-separate t-white left"><a href="/">home</a></li>
         </ul>
       </nav>
     </div>

@@ -18,3 +18,22 @@ li a, a:visited {
 li a:hover {
   color: #FFFFFF;
 }
+
+.pipe-separate {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-right: 1px solid;
+}
+
+.pipe-separate:first-of-type {
+  padding-left: 10;
+}
+
+.pipe-separate:last-of-type {
+  padding-right: 0;
+  border-right: none;
+}
+
+.t-black {
+  color: #000000;
+}
