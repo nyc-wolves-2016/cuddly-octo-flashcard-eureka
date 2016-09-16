@@ -6,5 +6,7 @@ class Deck < ActiveRecord::Base
   
   validates :name, presence: true 
 
-  
+  def card_count
+  	self.cards.count
+  end
 end
