@@ -1,0 +1,9 @@
+<form action="/login" method="post">
+ <input type="text" name="username" placeholder="Username"></input><br>
+ <input type="password" name="password" placeholder="Password"></input><br>
+ <br>
+ <input type="submit" value="Login">
+</form>
+<%if @errors %>
+ <p> <%= @errors %> </p>
+ <%end%>
