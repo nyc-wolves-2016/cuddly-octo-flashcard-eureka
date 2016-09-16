@@ -1,1 +1,13 @@
-<p>Hey bitch</p>
+<h1>Topics:</h1>
+
+
+<ul><% @decks.each do |deck| %>
+    <form method="post" action="<%= "/entries/#{entry.id}" %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete"></form>
+	<li><a href="/login"><%= deck.name %></a></li>
+	<% end %>
+</ul>
+
+
+<!-- NEED FORM FOR ACTION=/users/:user_id/games in order to create game instances-->

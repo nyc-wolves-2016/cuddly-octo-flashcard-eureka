@@ -3,6 +3,6 @@ class Game < ActiveRecord::Base
   belongs_to :user
   belongs_to :deck
   has_many :responses
-  has_many :cards, through: :responses
+  has_many :cards, through: :decks
 
 end
