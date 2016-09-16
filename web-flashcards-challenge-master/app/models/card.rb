@@ -4,6 +4,6 @@ class Card < ActiveRecord::Base
   has_many :responses
   has_many :games, through: :responses
   
-  validates :question, :answer, presence: true
+  validates :question, :answer, :deck_id, presence: true
 
 end
