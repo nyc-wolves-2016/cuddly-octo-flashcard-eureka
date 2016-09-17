@@ -4,9 +4,10 @@ class Game < ActiveRecord::Base
   belongs_to :deck
   has_many :responses
   has_many :cards, through: :deck
+  # scope :answered_cards, -> { joins(responses: :card).where(correct?: true) }
 
-  def correct_answers
-  	self.responses.count { |response| response.correct? }
+  def correct_guesses
+ 	self.responses.count { |response| response.correct? }
   end
 
   def total_guesses
@@ -14,6 +15,11 @@ class Game < ActiveRecord::Base
   end
 
   def cards_in_play
-  	self.responses.reject { |response| response.correct? }.map { |response| response.card }
-	end
+  	self.cards.select do |card|
+  		card.responses.none? { |response| response.correct? }
+  	end
+  end
+
+
 end
+# !card.responses ||
