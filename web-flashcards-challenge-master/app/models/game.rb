@@ -3,8 +3,10 @@ class Game < ActiveRecord::Base
   belongs_to :user
   belongs_to :deck
   has_many :responses
+
   has_many :cards, through: :deck
   # scope :answered_cards, -> { joins(responses: :card).where(correct?: true) }
+
 
   def correct_guesses
  	self.responses.count { |response| response.correct? }
