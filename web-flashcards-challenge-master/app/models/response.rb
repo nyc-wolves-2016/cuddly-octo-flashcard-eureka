@@ -5,10 +5,10 @@ class Response < ActiveRecord::Base
 
   has_one :user, through: :game
 
-   
-  validates :guess, presence: true 
+
+  validates :guess, presence: true
 
   def correct?
-  	self.guess == self.card.answer
+    self.guess == self.card.answer
   end
 end

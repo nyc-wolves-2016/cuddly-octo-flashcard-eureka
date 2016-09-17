@@ -9,19 +9,21 @@ class Game < ActiveRecord::Base
 
 
   def correct_guesses
- 	self.responses.count { |response| response.correct? }
+    self.responses.count { |response| response.correct? }
   end
 
   def total_guesses
-  	self.responses.count
+    self.responses.count
   end
 
   def cards_in_play
-  	self.cards.select do |card|
-  		card.responses.none? { |response| response.correct? }
-  	end
+    self.cards.select do |card|
+      card.responses.where(game_id: self.id).none? { |response| response.correct? }
+    end
   end
 
-
+  def correct_on_first_try
+    self.responses.select { |response| response.card.responses.where(game_id: self.id).length < 2}
+  end
 end
 # !card.responses ||
