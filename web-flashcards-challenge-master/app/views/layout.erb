@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -21,10 +21,13 @@
     <div class="nav_container">
       <nav class="nav_bar">
         <ul class="horizontal">
-          <% if !logged_in? %><li class="pipe-separate t-white left"><a href="/register">register</a></li><%end%>
-          <% if logged_in? %><li class="pipe-separate t-white left"><%= current_user.username %></li><%end%>
-          <% if !logged_in? %><li class="pipe-separate t-white left"><a href="/login">login</a></li><%end%>
-          <% if logged_in? %><li class="pipe-separate t-white left"><a href="/logout">logout</a></li><%end%>
+          <% if logged_in? %>
+            <li class="pipe-separate t-white left"><a href="/users/<%= current_user.id %>/profile"><%= current_user.username %></a></li>
+            <li class="pipe-separate t-white left"><a href="/sessions/logout">logout</a></li>
+          <% else %>
+            <li class="pipe-separate t-white left"><a href="/sessions/register">register</a></li>
+            <li class="pipe-separate t-white left"><a href="/sessions/login">login</a></li>
+          <%end%>
           <li class="pipe-separate t-white left"><a href="/">home</a></li>
         </ul>
       </nav>
