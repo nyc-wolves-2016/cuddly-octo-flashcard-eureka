@@ -43,11 +43,12 @@ li a:hover {
     width: 50%;
     border: 2px solid black;
     padding: 30px;
-    text-align: center;
+    text-align: left;
 }
 
 table, th, td {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
     border-spacing: 10px;
     text-align: left;
     margin-left: 30px;
