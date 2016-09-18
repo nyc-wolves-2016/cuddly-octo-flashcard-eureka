@@ -39,6 +39,11 @@ end
 
 get '/users/:id/profile' do
 	@user = User.find_by(id: params[:id])
+	@games = []
+	Game.find_each { |game| @games << Game.find(game.id) }
+	@first_game = @games.first.deck
+
+	# @deck = Deck.find_by(id: @game.deck_id)
 	erb :'/users/profile'
 end
 
