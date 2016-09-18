@@ -1,25 +1,22 @@
 <div class="container">
   <h4>Welcome, <%= @user.username %></h4>
   <h4>Here are your stats for this session:</h4>
-<table style="width:100%">
+<table style="width:90%">
   <% @games.each do |game| %>
     <tr>
-      <th>Deck: <%= game.deck.name %></th>
+      <th rowspan="2">Deck: <%= game.deck.name %></th>
       <th>Date</th>
       <th>Cards in Deck</th> 
       <th>First Guess Correct</th>
       <th>Total Guesses</th>
     </tr>
     <tr>
-      <td></td>
-      <td><%= game.created_at %></td>
+      <td><%= game.display_date %></td>
       <td><%= game.cards.count %></td> 
       <td><%= game.correct_on_first_try.count %></td>
       <td><%= game.total_guesses %></td>
     </tr>
   <% end %>
 </table>
-
-<p>  </p>
-
+<br>
 </div>
