@@ -1,12 +1,14 @@
-<form action="/sessions/register" method="post">
-  <input type="text" name="new_user[username]" placeholder="Name"></input><br>
-  <input type="text" name="new_user[email]" placeholder="Email"></input><br>
-  <input type="password" name="new_user[password]" placeholder="Password"></input><br>
-  <br>
-  <input type="submit" value="Register">
-</form>
-<%if @errors %>
-<% @errors.each do |error| %>
- <p> <%= error %> </p>
- <%end%>
- <%end%>
+<div class="container">
+  <form action="/sessions/register" method="post">
+    <input type="text" name="new_user[username]" placeholder="Name"></input><br>
+    <input type="text" name="new_user[email]" placeholder="Email"></input><br>
+    <input type="password" name="new_user[password]" placeholder="Password"></input><br>
+    <br>
+    <input type="submit" value="Register">
+  </form>
+  <%if @errors %>
+  <% @errors.each do |error| %>
+   <p> <%= error %> </p>
+   <%end%>
+   <%end%>
+</div>

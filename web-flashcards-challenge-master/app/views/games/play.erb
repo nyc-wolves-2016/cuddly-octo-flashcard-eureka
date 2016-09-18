@@ -1,15 +1,17 @@
-<h2> Question:</h2>
-<%= @card.question %>
+<div class="container">
+  <h2> Question:</h2>
+  <%= @card.question %>
 
-<h2>Answer</h2>
-  <form action="/games/response" method= "post">
-    <input type="hidden" name="response[game_id]" value=<%= @game.id %>>
-    <input type="hidden" name="response[card_id]" value=<%= @card.id %>>
-    <input type="text" name= "response[guess]" placeholder="put your guess here">
-    <input type="submit">
-  </form>
-  <% if @errors %>
-  <% @errors.each do |error| %>
-  <p> <%= error %> </p>
-  <%end%>
-  <%end%>
+  <h2>Answer</h2>
+    <form action="/games/response" method= "post">
+      <input type="hidden" name="response[game_id]" value=<%= @game.id %>>
+      <input type="hidden" name="response[card_id]" value=<%= @card.id %>>
+      <input type="text" name= "response[guess]" placeholder="put your guess here">
+      <input type="submit">
+    </form>
+    <% if @errors %>
+    <% @errors.each do |error| %>
+    <p> <%= error %> </p>
+    <%end%>
+    <%end%>
+</div>
