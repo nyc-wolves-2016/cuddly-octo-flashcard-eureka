@@ -42,7 +42,7 @@ li a:hover {
     margin: auto;
     width: 50%;
     border: 2px solid black;
-    padding: 10px;
+    padding: 30px;
     text-align: center;
 }
 
@@ -51,4 +51,8 @@ table, th, td {
     border-spacing: 10px;
     text-align: left;
     margin-left: 30px;
+}
+
+h1 {
+  margin-left: 20px;
 }
