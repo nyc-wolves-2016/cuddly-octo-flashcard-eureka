@@ -1,18 +1,19 @@
-<h1>Topics:</h1>
+<div class="container">
+  <h1>Topics:</h1>
 
 
-<ul><% @decks.each do |deck| %>
-    <%if logged_in? %>
-        <li><a href="<%= "/decks/#{deck.id}" %>"><%= deck.name %></a></li>
-    <% else %>
-      <li><%= deck.name %></li>
-    <% end %>
-<% end %>
-</ul>
-  <% if !logged_in? %>
-    <p>Please <a href="/sessions/login">login</a> to play the game.</p>
-  <%end%>
-
+  <ul><% @decks.each do |deck| %>
+      <%if logged_in? %>
+          <li><a href="<%= "/decks/#{deck.id}" %>"><%= deck.name %></a></li>
+      <% else %>
+        <li><%= deck.name %></li>
+      <% end %>
+  <% end %>
+  </ul>
+    <% if !logged_in? %>
+      <p>Please <a href="/sessions/login">login</a> to play the game.</p>
+    <%end%>
+</div>
 
 
 <!-- NEED FORM FOR ACTION=/users/:user_id/games in order to create game instances-->

@@ -37,3 +37,23 @@ li a:hover {
 .t-black {
   color: #000000;
 }
+
+.container {
+    margin: auto;
+    width: 50%;
+    border: 2px solid black;
+    padding: 30px;
+    text-align: left;
+}
+
+table, th, td {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    border-spacing: 10px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+h1 {
+  margin-left: 20px;
+}

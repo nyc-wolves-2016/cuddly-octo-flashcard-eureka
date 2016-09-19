@@ -25,5 +25,9 @@ class Game < ActiveRecord::Base
   def correct_on_first_try
     self.responses.select { |response| response.card.responses.where(game_id: self.id).length < 2}
   end
+
+  def display_date
+    self.created_at.to_formatted_s(:long)
+  end
 end
 # !card.responses ||
